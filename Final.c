@@ -500,6 +500,55 @@ void printAsciiArtForString(const char *str) {
     }
 }
 
+    void GraffitiAfun(const char *str) {
+           int len = strlen(str);
+
+    // Check if the input length exceeds the limit
+    if (len > 16) {
+        printf("%s\n", str);
+        return;
+    }
+
+    // Loop over each row of ASCII art
+    for (int i = 0; i < ASCII_ART_HEIGHT; i++) {
+        for (int j = 0; j < len; j++) {
+            char ch = toupper(str[j]); // Convert character to uppercase
+
+            // Print ASCII art for letters A to Z
+            switch (ch) {
+                case 'A': printf("%s ", GraffitiA[i]); break;
+                case 'B': printf("%s ", GraffitiB[i]); break;
+                case 'C': printf("%s ", GraffitiC[i]); break;
+                case 'D': printf("%s ", GraffitiD[i]); break;
+                case 'E': printf("%s ", GraffitiE[i]); break;
+                case 'F': printf("%s ", GraffitiF[i]); break;
+                case 'G': printf("%s ", GraffitiG[i]); break;
+                case 'H': printf("%s ", GraffitiH[i]); break;
+                case 'I': printf("%s ", GraffitiI[i]); break;
+                case 'J': printf("%s ", GraffitiJ[i]); break;
+                case 'K': printf("%s ", GraffitiK[i]); break;
+                case 'L': printf("%s ", GraffitiL[i]); break;
+                case 'M': printf("%s ", GraffitiM[i]); break;
+                case 'N': printf("%s ", GraffitiN[i]); break;
+                case 'O': printf("%s ", GraffitiO[i]); break;
+                case 'P': printf("%s ", GraffitiP[i]); break;
+                case 'Q': printf("%s ", GraffitiQ[i]); break;
+                case 'R': printf("%s ", GraffitiR[i]); break;
+                case 'S': printf("%s ", GraffitiS[i]); break;
+                case 'T': printf("%s ", GraffitiT[i]); break;
+                case 'U': printf("%s ", GraffitiU[i]); break;
+                case 'V': printf("%s ", GraffitiV[i]); break;
+                case 'W': printf("%s ", GraffitiW[i]); break;
+                case 'X': printf("%s ", GraffitiX[i]); break;
+                case 'Y': printf("%s ", GraffitiY[i]); break;
+                case 'Z': printf("%s ", GraffitiZ[i]); break;
+                default: printf("     "); // Adjust spacing based on character width
+            }
+        }
+        printf("\n");
+    }
+    }
+
 int main() {
     char input[100];
     int choice;
@@ -525,11 +574,9 @@ int main() {
 
     // Select font based on user choice
     switch (choice) {
-        // case 1: 
-        //     for (int i = 0; i < ASCII_ART_HEIGHT; i++) {
-        //         selectedFont[i] = GraffitiA[i];
-        //     }
-        //     break;
+        case 1: 
+           GraffitiAfun(input); 
+            break;
         // case 2:
         //     for (int i = 0; i < ASCII_ART_HEIGHT; i++) {
         //         selectedFont[i] = AvatarA[i];
